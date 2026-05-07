@@ -21,7 +21,7 @@ USE `bitpost`;
 
 -- Volcando estructura para tabla bitpost.tareas
 CREATE TABLE IF NOT EXISTS `tareas` (
-  `Id` int(11) NOT NULL,
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `IdUs` int(11) DEFAULT NULL,
   `titulo` varchar(50) DEFAULT NULL,
   `descripcion` varchar(50) DEFAULT NULL,
