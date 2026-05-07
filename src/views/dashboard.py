@@ -7,7 +7,7 @@ def DashboardView(page, tarea_controller):
         return
 
     lista_tareas = ft.Column(scroll=ft.ScrollMode.ALWAYS, expand=True)
-    txt_titulo = ft.TextField(label="Nueva Tarea", expand=True)
+    txt_titulo = ft.TextField(label="Nueva tarea para subir", expand=True)
 
     
     prioridad_input = ft.Dropdown(
@@ -32,7 +32,7 @@ def DashboardView(page, tarea_controller):
                 ft.Card(
                     content=ft.Container(
                         content=ft.ListTile(
-                            title=ft.Text(t["titulo"], weight="bold"),
+                            title=ft.Text(t["titulo"]),
                             subtitle=ft.Text(f"{t['descripcion']} | Prioridad: {t['prioridad']}"),
                             trailing=ft.Container(
                                 content=ft.Text(t["estado"]),
@@ -64,7 +64,7 @@ def DashboardView(page, tarea_controller):
         route="/dashboard",
         controls=[
             ft.AppBar(
-                title=ft.Text(f"Bienvenido, {user['nombre']}"),
+                title=ft.Text(f"bievnvenido , {user['nombre']}"),
                 actions=[ft.IconButton(
                         ft.Icons.EXIT_TO_APP,
                         on_click=lambda _: page.go("/"))]
@@ -77,7 +77,7 @@ def DashboardView(page, tarea_controller):
                             ft.FloatingActionButton(icon=ft.Icons.ADD,on_click=add_task
                             )]),
                     ft.Divider(),
-                    ft.Text("Mis Tareas Pendientes", size=20, weight="bold"),
+                    ft.Text("Las tareas que tengo pendientes", size=20),
                     lista_tareas
                 ],expand=True)])
 
